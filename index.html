@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Seat to Study — Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-shell">
+
+    <!-- LEFT: Graphic card / branding panel -->
+    <aside class="auth-graphic">
+      <div class="graphic-overlay"></div>
+      <div class="graphic-content">
+        <span class="pill">INT335 · Design Thinking</span>
+        <h1>A Seat to Study</h1>
+        <p class="graphic-sub">
+          Find the right kind of study space at LPU — silent or collaborative —
+          before you walk across campus.
+        </p>
+
+        <!-- Feature mini-cards (the "graphic card" ma'am asked for) -->
+        <div class="feature-cards">
+          <div class="feature-card">
+            <span class="feature-icon">📚</span>
+            <div>
+              <strong>LPU Library</strong>
+              <small>Reading rooms & group rooms</small>
+            </div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🤖</span>
+            <div>
+              <strong>AI space pick</strong>
+              <small>Suggests a seat for you</small>
+            </div>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🟢</span>
+            <div>
+              <strong>Live status</strong>
+              <small>Free · Filling up · Full</small>
+            </div>
+          </div>
+        </div>
+
+        <p class="graphic-foot">Student prototype · Data is simulated for testing</p>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Login / Register form -->
+    <main class="auth-panel">
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tabLogin">Login</button>
+        <button class="auth-tab" id="tabRegister">Register</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="auth-form">
+        <h2>Welcome back</h2>
+        <p class="auth-hint">Log in to see live study spaces.</p>
+
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="you@lpu.co.in" required />
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required />
+
+        <button type="submit" class="btn primary full">Log in</button>
+        <p class="auth-switch">New here? <a href="#" id="goRegister">Create an account</a></p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="registerForm" class="auth-form" hidden>
+        <h2>Create your account</h2>
+        <p class="auth-hint">Register once — then find spaces anytime.</p>
+
+        <label for="regName">Full name</label>
+        <input type="text" id="regName" placeholder="Your name" required />
+
+        <label for="regRoll">Roll number</label>
+        <input type="text" id="regRoll" placeholder="e.g. 12345678" required />
+
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="you@lpu.co.in" required />
+
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" placeholder="Minimum 6 characters" minlength="6" required />
+
+        <label for="regSpace">What kind of space do you usually need?</label>
+        <select id="regSpace" required>
+          <option value="">Choose one</option>
+          <option value="Silent">Silent study space</option>
+          <option value="Group">Group study space</option>
+          <option value="Both">Both</option>
+        </select>
+
+        <button type="submit" class="btn primary full">Create account</button>
+        <p class="auth-switch">Already registered? <a href="#" id="goLogin">Log in</a></p>
+      </form>
+
+      <p id="authMsg" class="auth-msg" hidden></p>
+    </main>
+
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

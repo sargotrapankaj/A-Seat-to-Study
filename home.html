@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Seat to Study — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="container app-header-inner">
+      <div>
+        <h1>A Seat to Study</h1>
+        <p class="app-sub" id="welcomeText">Welcome!</p>
+      </div>
+      <button class="btn ghost" id="logoutBtn">Log out</button>
+    </div>
+  </header>
+
+  <div class="banner">
+    Student prototype — data is simulated for testing. Please fill the feedback form after trying it.
+  </div>
+
+  <main class="container">
+
+    <!-- AI SUGGESTION CARD -->
+    <section class="ai-card">
+      <div class="ai-head">
+        <span class="ai-badge">🤖 AI suggestion</span>
+        <h2>Where should I study right now?</h2>
+      </div>
+      <p class="muted" id="aiContext">Based on your preference and current crowd levels.</p>
+      <div id="aiResult" class="ai-result">
+        <p class="muted">Click below to get a recommendation.</p>
+      </div>
+      <button class="btn primary" id="aiBtn">Suggest a space for me</button>
+      <p class="ai-note">Prototype AI: uses simple rules (your preference + status + capacity). Not a real ML model.</p>
+    </section>
+
+    <!-- SPACE LIST -->
+    <section class="section">
+      <h2>Study spaces</h2>
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="silent">Silent</button>
+        <button class="filter-btn" data-filter="group">Group</button>
+      </div>
+      <div class="card-grid" id="cardGrid"></div>
+    </section>
+
+    <!-- REPORT STATUS -->
+    <section class="section">
+      <h2>Report a space's status</h2>
+      <form id="reportForm" class="report-form">
+        <label for="spaceSelect">Which space?</label>
+        <select id="spaceSelect" required></select>
+        <fieldset>
+          <legend>Current status</legend>
+          <label><input type="radio" name="status" value="Free" required /> Free</label>
+          <label><input type="radio" name="status" value="Filling up" /> Filling up</label>
+          <label><input type="radio" name="status" value="Full" /> Full</label>
+        </fieldset>
+        <label for="noteInput">Optional note</label>
+        <input type="text" id="noteInput" placeholder="e.g. 2 seats left near the window" maxlength="80" />
+        <button type="submit" class="btn primary full">Submit update</button>
+      </form>
+      <p id="reportMsg" class="success-msg" hidden>Thank you! Your update was recorded.</p>
+    </section>
+
+    <!-- ABOUT / FEEDBACK -->
+    <section class="section">
+      <h2>About this project</h2>
+      <p>
+        A student prototype for INT335 Design Thinking at LPU. It helps students
+        find silent or collaborative study spaces during exam weeks. Data is
+        simulated for testing; your feedback helps us improve it.
+      </p>
+      <a class="btn secondary" href="[GOOGLE_FORM_LINK]" target="_blank" rel="noopener">
+        Open feedback form
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>INT335 Design Thinking · Student Prototype · 2026-27</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
